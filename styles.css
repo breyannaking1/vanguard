@@ -1,7 +1,7 @@
-/* CSS BY YOUR NAME */
+/* CSS BY Breyanna King */
 
-/* IMPORTED FONTS*/
-/* IMPORT "INTER" FROM GOOGLE FONTS"
+/* IMPORTED FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
 /* CSS RESET */
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -18,144 +18,263 @@ dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup, 
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-    display: block;
+  display: block;
 }
 body {
-    line-height: 1;
+  line-height: 1;
 }
 ol, ul {
-    list-style: none;
+  list-style: none;
 }
 blockquote, q {
-    quotes: none;
+  quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
+blockquote::before, blockquote::after,
+q::before, q::after {
+  content: '';
+  content: none;
 }
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* ROOT VARIABLES */
 :root {
-    --blue: #007BFF;
-    --red: #FF4500;
-    --white: #EAEAEA;
-    --black: #000000;
-    --charcoal: #333333;
-    --font: "Inter", sans-serif;
+  --blue: #007BFF;
+  --red: #FF4500;
+  --white: #F9F9F9;
+  --black: #000000;
+  --charcoal: #333333;
+  --font: 'Inter', sans-serif;
 }
 
-/* GLOBAL STYLES (MOBILE FIRST (SMALL) */
-
+/* GLOBAL STYLES (MOBILE FIRST / SMALL) */
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
-
-/* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+body {
+  font-family: var(--font);
+  background-color: var(--white);
+  color: var(--charcoal);
+  font-size: 16px;
+  line-height: 1.6;
+  min-width: 400px;
 }
 
-/* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
- {
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
-    height: 80vh;
-    display: grid;
-    place-items: center;
-    text-align: center;
-    padding: 1rem;
-    overflow: hidden;
+/* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER
+   THIS ALLOWS THE BASE ELEMENTS TO BE 100% WIDTH,
+   BUT CONSTRAINS THE ACTUAL CONTENT TO 90% */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* HEADER AND NAV STYLES */
+header {
+  background-color: var(--black);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: var(--blue);
+}
+
+/* ADD TO "INNOVATION & INVESTMENT SECTION"
+   (Photo by Kevin Matos on Unsplash) */
+#innovation {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+              url('images/vanguard-hero.jpg') no-repeat center center / cover;
+  height: 80vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 1rem;
+  overflow: hidden;
+  color: var(--white);
 }
 
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
- {
-    content: "";
-
-    left:-.5rem;
-    width: 3.75rem;
-    height: 3.75rem;
-    background: url('images/vanguard-logo.svg') no-repeat center/contain;
-
+h1::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  width: 3.75rem;
+  height: 3.75rem;
+  background: url('images/vanguard-logo.svg') no-repeat center / contain;
 }
+
+/* BUTTON STYLES */
+button {
+  background-color: var(--blue);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* FORM STYLING */
+form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid var(--charcoal);
+  border-radius: 5px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 5px var(--blue);
+}
+
 /* THIS ONE IS DONE FOR YOU */
 #bar-chart {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    align-items: flex-end;
-    justify-content: space-around;
-    gap: 1rem;
-    height: 300px;
-    width: 100%;
-    max-width: 800px;
-    padding: 1rem;
-    position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: flex-end;
+  justify-content: space-around;
+  gap: 1rem;
+  height: 300px;
+  width: 100%;
+  max-width: 800px;
+  padding: 1rem;
+  position: relative;
 }
+
 /* ADD ON TRANSITION ON HEIGHT */
 .bar {
-    width: 50px;
-    background: var(--charcoal);
-    border-radius: 10px;
-    position: relative;
-    transition: ;
-    height: 0;
+  width: 50px;
+  background: var(--charcoal);
+  border-radius: 10px;
+  position: relative;
+  transition: height 0.3s ease-in-out;
+  height: 0;
+  animation: stepUp 1s ease-in-out forwards;
 }
+
 /* THIS ONE IS DONE FOR YOU */
 .bar::after {
-    content: attr(data-year);
-    position: absolute;
-    bottom: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 1rem;
-    font-weight: bold;
-    color: var(--white);
+  content: attr(data-year);
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--white);
 }
+
+/* ANIMATION ON BAR HEIGHT (stepUp) */
 @keyframes stepUp {
-    0% {
-        height: 0;
-    }
-    100% {
-        height: var(--height);
-    }
-}
-/* ADD ANIMATION ON stepUp for 1s ease-in-out forwards */
-.bar {
-    animation: stepUp 1s ease-in-out forwards;
+  0% {
+    height: 0;
+  }
+  100% {
+    height: var(--height);
+  }
 }
 
+/* FOOTER STYLES */
+footer {
+  background-color: var(--black);
+  color: var(--white);
+  text-align: center;
+  padding: 2rem 1rem;
+}
 
-/* MEDIA QUERIES (MEDIUM) */ 
+/* MEDIA QUERY (MEDIUM) */
+@media screen and (min-width: 800px) {
+  /* ADD TWO COLUMN LAYOUT TO RESULTS SECTION */
+  #results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
 
-    #results {
-        grid-template-columns: 1fr 1fr;
-    }
-    .results-container {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .results-table {
-        width: 50%;
-    }
-    .bar-chart {
-        width: 50%;
-    }
+  /* LAYOUT CHANGES TO RESULTS WRAPPER */
+  .results-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
+  .results-table {
+    width: 50%;
+  }
 
-/* MEDIA QUERIES (LARGE) */
+  .bar-chart {
+    width: 50%;
+  }
+
+  nav ul {
+    gap: 3rem;
+  }
+}
+
+/* MEDIA QUERY (LARGE) */
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  section {
+    padding: 4rem 0;
+  }
+
+  button {
+    font-size: 1.25rem;
+    padding: 1rem 2rem;
+  }
+
+  form {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  form textarea {
+    grid-column: span 2;
+  }
+}
